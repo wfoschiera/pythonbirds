@@ -8,6 +8,7 @@ class Pessoa:
         return f'Olá {id(self)}'
 
 if __name__ == '__main__':
+    matheus = Pessoa(nome='Matheus', idade = 1)
     william = Pessoa(nome='William', idade=33)
     antoninho = Pessoa(william, nome='Antoninho', idade=69)
     #chamando o método  cumprimentar a partir da classe (Pessoa) e identificando o objeto (p) no método.
@@ -19,5 +20,16 @@ if __name__ == '__main__':
     print(antoninho.idade)
     for filho in antoninho.filhos:
         print(filho.nome)
+    #criando atributos em tempo real (na execução)
+    antoninho.sobrenome = 'Foschiera'
 
+    william.filhos.append(matheus)
 
+    print(antoninho.__dict__)
+    #removendo atributo dinâmico
+    del antoninho.sobrenome
+    print(antoninho.__dict__)
+
+    for neto in william.filhos:
+        print(neto.nome)
+    print('acabou')
