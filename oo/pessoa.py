@@ -1,4 +1,6 @@
 class Pessoa:
+    olhos = 2
+
     def __init__(self, *filhos, nome=None, idade=33):
         self.idade = idade
         self.nome = nome
@@ -22,6 +24,8 @@ if __name__ == '__main__':
         print(filho.nome)
     #criando atributos em tempo real (na execução)
     antoninho.sobrenome = 'Foschiera'
+    # atributo default ou atributo de classe. Economizar memoria uma vez que repete para todo objeto.
+    william.olhos = 3
 
     william.filhos.append(matheus)
 
@@ -32,4 +36,8 @@ if __name__ == '__main__':
 
     for neto in william.filhos:
         print(neto.nome)
-    print('acabou')
+
+    print(Pessoa.olhos)
+    print(id(william.olhos))
+    print(id(Pessoa.olhos))
+    print(id(antoninho.olhos))
