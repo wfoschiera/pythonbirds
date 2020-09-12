@@ -33,6 +33,8 @@ if __name__ == '__main__':
     #chamando o método  cumprimentar a partir da classe (Pessoa) e identificando o objeto (p) no método.
     print(Pessoa.cumprimentar(antoninho))
     print(id(antoninho))
+    print('Is Instance: ', isinstance(antoninho,Homem))
+
     #chamando o método (cumprimentar) a partir do objeto(p)
     print(antoninho.cumprimentar())
     print(antoninho.nome)
