@@ -52,7 +52,10 @@ class Ator():
         :param intervalo: Intervalo a ser considerado
         :return:
         """
-        pass
+        if self.status == ATIVO and outro_ator.status == ATIVO:
+            if abs(self.x - outro_ator.x) <= intervalo and abs(self.y - outro_ator.y) <= intervalo:
+                self.status = DESTRUIDO
+                outro_ator.status = DESTRUIDO
 
 class Obstaculo(Ator):
     _caracter_ativo = 'O'
